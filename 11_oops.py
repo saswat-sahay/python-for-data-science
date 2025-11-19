@@ -51,3 +51,41 @@ reebok.show()
 campus.show()
 localbrand.show()
 
+##  Types of Attribute
+
+#  Class attribute - A normal variable create inside a class is a class attribute.
+ 
+# Instance attribute - A attribute created using an instance like self.name, self.age etc. It is known as instance attribute.
+
+class Animal:
+    breed = "lion"  # class attribute
+
+    def __init__(self, age):
+        self.age = age  # instance attribute
+        
+    def ageTeller(self, age): # instance attribute
+        self.age = age
+    
+# Types of Methods
+# Instance Method - An instance method Works with instance (object) of the class. This method can access and modify instance attributes.
+
+    def show(self):  # instance method
+        print(f"this is a instance method and it point to the object {self.age}")
+
+## Class Method - This method works with the class itself it will not target the instance (object) and it targets to the class. we have to use @classmethod decorator for creating the class method and it takes cls as their first parameter.
+
+    @classmethod  # decorator
+    def hello(cls):
+        print(f"this is a class method and it points to the class and self.age will not work here")
+
+# Static Method - This method doesn’t access class or instance directly it also uses a decorator @staticmethod it just acts like a regular function placed inside a class.
+    @staticmethod
+    def static():
+        print("this is a static method and it doesnot target either class or object")
+
+obj1 = Animal(20)
+obj1.show()
+obj1.hello()
+obj1.static()
+
+
