@@ -104,5 +104,3 @@ class BigFactory(MediumFactory):
     def __init__(self, material, zips, pocket, color):
         super().__init__(material, zips, pocket)
         self.color = color
-
-
