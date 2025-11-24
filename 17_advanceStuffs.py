@@ -67,7 +67,57 @@ hello(12,3)
 
 # Args and Kwargs 
 
+# They’re special keywords in Python used in function definitions to accept a flexible number of arguments
+# Now you always don’t have to use Args and Kwargs the main thing is * , ** you can use any names in front of them.
+# so *args are used for multiple positional arguments, and **kwargs are used for multiple keyword arguments.
+# And the *args becomes a tuple and **kwargs becomes a dictionary 
+# The use case is great:
+# 1. You don’t need to know how many inputs you'll get 
+# 2. Helps in building flexible functions, decorators, APIs, and more
 
+def addition(a,b):
+    sum = 0
+    print(a+b)
+
+addition(5,3)
+# but lets see if you pass more than two arguments
+# addition(5,3,2)
+# you got error: TypeError: addition() takes 2 positional arguments but 3 were given
+
+def addition(*args):    # args is just a name you  can write anything here {imp. is single star}
+    sum = 0
+    for i in args:
+        sum = sum + i
+    print(sum)
+    print(args)    # see we got a tuple made up of positional arguments passed to the function
+
+addition(5,2,5,2,1,21,20,15,10,1,10,3,5)
+# see now you can pass n number of arguments without thinking about the parameters
+
+def information(**kwargs):    # kwargs is just a name you  can write anything here {imp. is double star}
+    for i in kwargs:    
+        print(f" {i} : {kwargs[i]}")
+    print(kwargs)    # see we got a dictonary made up of keyword arguments passed to the function
+
+information(name = 'saswat', age = 25, education = 'MCA')
+
+# THE USE OF ARGS AND KWARGS IN DECORATORS
+
+def decorate(func):
+    def wrapper(*args, **kwargs):
+        print("decorate before")
+        func(*args, **kwargs)
+        print("decorate after")
+    return wrapper
+
+@decorate
+def addtion2(*args):
+    sum = 0
+    for i in args:
+        sum = sum + i
+    print(sum)
+
+addtion2(10,2,2,5,1,50)
 
 
 # List, Dictionary and set comphrehension
