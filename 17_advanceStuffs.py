@@ -122,10 +122,59 @@ addtion2(10,2,2,5,1,50)
 
 # List, Dictionary and set comphrehension
 
+a = 12  
+print("even") if a%2 == 0 else print("odd")
+# short hand(comprihension) 
+# now lets talk about 
+
+## list comprehension
+
+# lets apend even numbers inside a list
+l = []
+
+for i in range(1,31):
+    if i%2 == 0:
+        l.append(i)
+print(l)
+
+# lets do it in a single line
+
+l = [i for i in range(1,21) if i%2 ==0]
+print(l)
+
+
+## dictionary comprehension
+
+l = {i : i**2 for i in range(1,11)}
+print(l)
+
+
+## set comprehension
+
+l = {i*i for i in range(1,11) if i%2 == 0}
+print(l)
 
 # Lambda functions
 
+# A lambda function is an anonymous, inline function defined using the lambda keyword
+# It's often used for short, simple functions that are used only once or temporarily
+# You can have multiple arguments but there will be only one expression.
 
+# example
+
+def add(a,b):
+    print(a+b)
+add(2,3)
+
+# this fucntion with the help of lambda
+add = lambda a,b : a+b
+
+print(add(3,5))
+
+# we can also use if else with the help of lambda
+
+check_even = lambda no : "even" if no%2 == 0 else "odd"
+print(check_even(161))
 
 # Map filter and zip
 
