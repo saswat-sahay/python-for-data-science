@@ -178,7 +178,52 @@ print(check_even(161))
 
 # Map filter and zip
 
+# map
+# map(fun, iterable) ek iterator return karta hai.
+# Ye function ko iterable ke har element par apply karta hai.
+# Values ko store nahi karta, bas calculate karne ka promise rakhta hai.
 
+# square = map(lambda x: x**2, [1,2,3])
+
+# lambda
+# Ek anonymous (nameless) function hai.
+# Chhote aur simple functions banane ke liye.
+
+a = [1,2,3,4,5]     # list
+
+square = map(lambda x : x**2, a)    # map me do chij caahiye ek to function jo harr ek iterable ke element pr lagega
+# "lambda x : x**2" ye funciton "a" jo ki ek list h uske harr ek element pr lagega
+ 
+# print(list(square))     # direct square ko isliye print nhi kr skte qki wo object me h isliye usko pahle list me convert kiya jaa raha hai
+
+# for i in square:
+    # print(i)
+
+print(*square)
+
+# map can be used with a normal function also
+
+def double(x):
+    return x*2
+
+double_value = map(double, a)
+
+print(list(double_value))
+
+
+# filter
+
+a = [1,2,3,4,5,7,9,10,8,20,14,15,37,26]
+def even(x):
+    if x%2 == 0:
+        return True
+    else:
+        return False
+
+ev = filter(even, a)
+od = filter(lambda x : False if x%2==0 else True , a)
+print(list(ev))
+print(list(od))
 
 
 
