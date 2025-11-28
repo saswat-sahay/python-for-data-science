@@ -228,3 +228,28 @@ print(list(od))
 
 
 # Modules and packages 
+
+# modules
+# lets say you have a different file named Mathematics.py where you have addition and multiplication fucntions or any other functions
+# that file (Mathematics.py) is known as module
+
+# how to import that file (module)
+# import Mathematics    # imported 
+# now lets  use a function
+# Mathematics.addition(10,12)
+# or if you want to import a particular function from that file (module) then:-
+# from mathematics import addition
+# addition(15,17)
+
+
+# package
+# a package is a folder that contains one or more modules
+# It may also contain sub-packages
+
+# folder structure 1 == models ->module1 and module2
+
+# from models import modulename1,modulename2
+
+# folder structure 2 == models -> model -> module1 and module2
+
+# from models.model import modulename1,modulename2
